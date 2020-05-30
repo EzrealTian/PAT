@@ -2,13 +2,14 @@
 //main.cpp
 //A1002-A+B for Polynomials
 //
-//Created by Ezreal on 2019/08/03.
+//Created by Ezreal on 2019-08-03.
 //Copyright © 2019年 Ezreal. All rights reserved.
 //
 
 
 
 #include <cstdio>
+
 int main(){
     int count = 0;
     int K;
@@ -19,11 +20,11 @@ int main(){
         scanf("%d", &K);
         for (int i = 0; i < K; i++) {
             scanf("%d%lf", &exp, &coe);
-            if (arr[exp] == 0.0) count++;
             arr[exp] += coe;
         }
     }
+    for (int i = 0; i < 1001; i++) if (arr[i] != 0) count++;
     printf("%d", count);
-    for (int i = 1000; i>= 0; i--) if (arr[i] != 0.0) printf(" %d %.1f", i, arr[1]);
+    for (int i = 1000; i>= 0; i--) if (arr[i] != 0.0) printf(" %d %.1f", i, arr[i]);
     return 0;
 }

@@ -2,7 +2,7 @@
 //main.cpp
 //A1001-A+B Format
 //
-//Created by Ezreal on 2019/09/11.
+//Created by Ezreal on 2019-09-11.
 //Copyright © 2019年 Ezreal. All rights reserved.
 //
 
