@@ -12,42 +12,27 @@
 #include <vector>
 
 using namespace std;
-vector<int> v;
-map<int, int> m;
-int n1, n2;
-void LCA(int root_index) {
-    if (root_index >= v.size()) return;
-    int root = v[root_index];
-    if ((root > n1 && root < n2) || (root < n1 && root > n2)) printf("LCA of %d and %d is %d.\n", n1, n2, root);
-    else if (n1 == root) printf("%d is an ancestor of %d.\n", n1, n2);
-    else if (n2 == root) printf("%d is an ancestor of %d.\n", n2, n1);
-    else if (root > n1 && root > n2) LCA(root_index + 1);
-    else {
-        int r_index;
-        for (int i = root_index; i < v.size(); i++) if (v[i] > root) {
-            r_index = i;
-            break;
-        } 
-        LCA(r_index);
-    }
-}
 int main() {
-    int M, N;
+    int M, N, node;
+    map<int, int> m;
+    int n1, n2;
     scanf("%d%d", &M, &N);
-    v.resize(N+1);
-    for (int i = 1; i <= N; i++) {
+    vector<int> v(N);
+    for (int i = 0; i < N; i++) {
         scanf("%d", &v[i]);
-        m[v[i]] = i;
+        m[v[i]] = 1;
     }
     while (M--) {
         scanf("%d%d", &n1, &n2);
-        if (m[n1] == 0) {
-            if (m[n2] == 0) printf("ERROR: %d and %d are not found.\n", n1, n2);
-            else printf("ERROR: %d is not found.\n", n1);
-        } else if (m[n2] == 0) {
-            printf("ERROR: %d is not found.\n", n2);
-        } else {
-            LCA(0);
+        if (m[n1] == 0 && m[n2] == 0) printf("ERROR: %d and %d are not found.\n", n1, n2);
+        else if (m[n1] == 0 || m[n2] == 0) printf("ERROR: %d is not found.\n", m[n1] == 0 ? n1 : n2);
+        else {
+            for (int i = 0; i < N; i++) {
+                node = v[i];
+                if((node >= n1 && node <= n2) || (node <= n1 && node >= n2)) break;
+            }
+            if (node == n1 || node == n2) printf("%d is an ancestor of %d.\n", node, node == n1 ? n2 : n1);
+            else printf("LCA of %d and %d is %d.\n", n1, n2, node);
         }
     }
     return 0;
