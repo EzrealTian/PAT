@@ -11,7 +11,7 @@
 #include <unordered_map>
 
 using namespace std;
-int main(int argc, const char * argv[]) {
+int main() {
     int M, N, S;
     unordered_map<string, int> m;
     string name;

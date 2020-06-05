@@ -31,7 +31,7 @@ node* build_tree (int root_index, int left, int right, int level) {
     n->right = build_tree(m1[v2[m2[v1[root_index]] - 1]], root_index + 1, right, level + 1);
     return n;
 }
-int main(int argc, const char * argv[]) {
+int main() {
     int N;
     scanf("%d", &N);
     v1.resize(N);

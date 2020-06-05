@@ -21,7 +21,7 @@ void dfs(int node) {
         if (a[node][i] == 1 && visit[i] == 0) dfs(i);
     }
 }
-int main(int argc, const char * argv[]) {
+int main() {
     scanf("%d%d", &N, &M);
     vector<int> v(N + 1);
     for (int i = 0; i < M; i++) {
