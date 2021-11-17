@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "g++-8 run",
+            "name": "g++-10 run",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -15,7 +15,8 @@
             "environment": [],
             "externalConsole": true,
             "MIMode": "lldb",
-            "preLaunchTask": "g++-8 build active file"
+            "preLaunchTask": "g++-10 build active file",
+            "targetArchitecture": "x64"
         }
     ]
 }

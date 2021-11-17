@@ -3,8 +3,8 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "g++-8",
-            "command": "/usr/local/bin/g++-8",
+            "label": "g++-10",
+            "command": "/usr/local/bin/g++-10",
             "args": [
                 "-g",
                 "${file}",
@@ -22,8 +22,8 @@
         },
         {
             "type": "shell",
-            "label": "g++-8 build active file",
-            "command": "/usr/local/bin/g++-8",
+            "label": "g++-10 build active file",
+            "command": "/usr/local/bin/g++-10",
             "args": [
                 "-g",
                 "${file}",
